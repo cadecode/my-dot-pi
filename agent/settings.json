@@ -1,11 +1,11 @@
 {
   "lastChangelogVersion": "0.79.10",
   "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-flash",
+  "defaultModel": "deepseek-v4-pro",
   "defaultThinkingLevel": "high",
   "hideThinkingBlock": false,
   "theme": "dark",
-  "showHardwareCursor": true,
+  "showHardwareCursor": false,
   "shellPath": "D:/dev-env/lib/Git/bin/bash.exe",
   "packages": [
     "npm:pi-web-access",
