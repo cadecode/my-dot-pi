@@ -1,0 +1,23 @@
+{
+  "name": "pi-extensions",
+  "private": true,
+  "dependencies": {
+    "@cnife/pi-simple-plannotator": "^0.1.5",
+    "@juicesharp/rpiv-ask-user-question": "^1.20.0",
+    "@juicesharp/rpiv-btw": "^1.20.0",
+    "@juicesharp/rpiv-todo": "^1.20.0",
+    "@narumitw/pi-goal": "^0.6.2",
+    "@narumitw/pi-plan-mode": "^0.6.2",
+    "pi-cache-optimizer": "^2.6.10",
+    "pi-cost": "^0.1.1",
+    "pi-inspect": "^0.5.0",
+    "pi-loadout": "^0.0.35",
+    "pi-mcp-adapter": "^2.10.0",
+    "pi-powerline-footer": "^0.6.1",
+    "pi-simplify": "^0.2.2",
+    "pi-subagents": "^0.30.0",
+    "pi-vision-proxy": "^1.7.1",
+    "pi-web-access": "^0.10.7",
+    "pi-web-access-lean": "^0.1.1"
+  }
+}

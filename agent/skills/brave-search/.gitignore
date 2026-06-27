@@ -1,0 +1,5 @@
+# === 密钥配置 ===
+config.json
+
+# === 依赖 ===
+node_modules/

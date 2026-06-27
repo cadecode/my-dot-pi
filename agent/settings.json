@@ -1,0 +1,28 @@
+{
+  "lastChangelogVersion": "0.79.10",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-flash",
+  "defaultThinkingLevel": "high",
+  "hideThinkingBlock": false,
+  "theme": "dark",
+  "showHardwareCursor": true,
+  "shellPath": "D:/dev-env/lib/Git/bin/bash.exe",
+  "packages": [
+    "npm:pi-web-access",
+    "npm:pi-mcp-adapter",
+    "npm:pi-cache-optimizer",
+    "npm:pi-powerline-footer",
+    "npm:@juicesharp/rpiv-btw",
+    "npm:@juicesharp/rpiv-todo",
+    "npm:@narumitw/pi-goal",
+    "npm:@narumitw/pi-plan-mode",
+    "npm:@cnife/pi-simple-plannotator",
+    "npm:pi-cost",
+    "npm:pi-loadout",
+    "npm:pi-subagents",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:pi-inspect",
+    "npm:pi-vision-proxy",
+    "npm:pi-simplify"
+  ]
+}

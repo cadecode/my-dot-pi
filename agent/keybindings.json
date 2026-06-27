@@ -1,0 +1,4 @@
+{
+  "tui.input.newLine": ["shift+enter", "ctrl+enter", "ctrl+j"],
+  "app.message.dequeue": ["alt+up", "alt+h"]
+}

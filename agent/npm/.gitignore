@@ -1,0 +1,4 @@
+# npm/ — 默认排除所有，仅保留需要的文件
+*
+!.gitignore
+!package.json

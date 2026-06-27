@@ -1,0 +1,32 @@
+# ============================================
+# agent/ 目录 .gitignore
+# ============================================
+
+# === 密钥 / 凭证（绝对不要提交） ===
+auth.json
+models.json
+web-search.json
+
+# === 用户配置（个人偏好，无需分享） ===
+loadout.json
+multimodal-proxy.json
+
+# === 运行日志 / 会话数据（隐私敏感） ===
+run-history.jsonl
+inspect/
+sessions/
+
+# === 用量统计（含 session ID） ===
+pi-cache-optimizer-stats.json
+
+# === 二进制文件 ===
+bin/
+
+# === 依赖目录 ===
+node_modules/
+npm/node_modules/
+
+# === 操作系统文件 ===
+.DS_Store
+Thumbs.db
+Desktop.ini
