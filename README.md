@@ -4,6 +4,8 @@
 
 本仓库包含我的个人配置方案，覆盖扩展、Skill、Agent 和 Prompt 四个维度，公开分享供参考和学习。
 
+> 仓库地址：https://github.com/cadecode/my-dot-pi
+
 ---
 
 ## 目录
