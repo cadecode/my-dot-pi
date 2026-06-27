@@ -112,7 +112,7 @@
 | 名称 | 来源 | 说明 |
 |------|------|------|
 | **skill-deps** | 自建 | 依赖管理规范。Python 优先 uv，Node 使用 pnpm。先检后装，安装后固化到 SKILL.md |
-| **env-info** | 自建 | 开发环境参考。记录工具路径版本，包管理器偏好：pnpm > npm/yarn，uv > pip |
+| **env-info** | 自建 | 开发环境参考。记录工具路径版本，包管理器偏好：pnpm > npm/yarn，uv > pip。⚠️ 需根据自身环境改写 |
 | **skill-creator** | Anthropic | Skill 创建完整工作流：草稿 → 测试用例 → 批量评估 → 定量分析 → 迭代优化 |
 
 ### 搜索能力类
