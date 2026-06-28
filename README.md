@@ -101,7 +101,7 @@
 
 | 包名 | 说明 |
 |------|------|
-| `npm:pi-vision-proxy` | 纯文本模型的多模态 fallback，自动转发图像到视觉模型 |
+| `npm:pi-multimodal-proxy` | 纯文本模型的多模态 fallback，自动转发图像到视觉模型 |
 
 ---
 

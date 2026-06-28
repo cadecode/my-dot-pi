@@ -13,10 +13,10 @@
     "pi-inspect": "^0.5.0",
     "pi-loadout": "^0.0.35",
     "pi-mcp-adapter": "^2.10.0",
+    "pi-multimodal-proxy": "^1.7.1",
     "pi-powerline-footer": "^0.6.1",
     "pi-simplify": "^0.2.2",
     "pi-subagents": "^0.30.0",
-    "pi-vision-proxy": "^1.7.1",
     "pi-web-access": "^0.10.7",
     "pi-web-access-lean": "^0.1.1"
   }

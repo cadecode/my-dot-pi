@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.79.10",
-  "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-pro",
+  "defaultProvider": "zai",
+  "defaultModel": "glm-4.7-flash",
   "defaultThinkingLevel": "high",
   "hideThinkingBlock": false,
   "theme": "dark",
@@ -22,7 +22,8 @@
     "npm:pi-subagents",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-inspect",
-    "npm:pi-vision-proxy",
-    "npm:pi-simplify"
-  ]
+    "npm:pi-simplify",
+    "npm:pi-multimodal-proxy"
+  ],
+  "powerline": "default"
 }
