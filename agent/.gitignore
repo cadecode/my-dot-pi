@@ -5,6 +5,7 @@
 # === 密钥 / 凭证（绝对不要提交） ===
 auth.json
 models.json
+models-store.json
 web-search.json
 
 # === 用户配置（个人偏好，无需分享） ===
