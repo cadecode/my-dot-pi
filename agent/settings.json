@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.79.10",
-  "defaultProvider": "zai",
-  "defaultModel": "glm-4.7-flash",
+  "lastChangelogVersion": "0.82.1",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-flash",
   "defaultThinkingLevel": "high",
   "hideThinkingBlock": false,
   "theme": "dark",
