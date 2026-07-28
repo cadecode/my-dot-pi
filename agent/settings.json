@@ -8,22 +8,17 @@
   "showHardwareCursor": false,
   "shellPath": "D:/dev-env/lib/Git/bin/bash.exe",
   "packages": [
-    "npm:pi-web-access",
-    "npm:pi-mcp-adapter",
     "npm:pi-cache-optimizer",
-    "npm:pi-powerline-footer",
-    "npm:@juicesharp/rpiv-btw",
+    "npm:pi-loadout",
+    "npm:pi-mcp-adapter",
+    "npm:pi-multimodal-proxy",
+    "npm:pi-simplify",
+    "npm:pi-web-access",
     "npm:@juicesharp/rpiv-todo",
+    "npm:@narumitw/pi-btw",
     "npm:@narumitw/pi-goal",
     "npm:@narumitw/pi-plan-mode",
-    "npm:@cnife/pi-simple-plannotator",
-    "npm:pi-cost",
-    "npm:pi-loadout",
-    "npm:pi-subagents",
-    "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:pi-inspect",
-    "npm:pi-simplify",
-    "npm:pi-multimodal-proxy"
-  ],
-  "powerline": "default"
+    "npm:@narumitw/pi-statusline",
+    "npm:@narumitw/pi-subagents"
+  ]
 }

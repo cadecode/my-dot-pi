@@ -6,19 +6,20 @@
 auth.json
 models.json
 models-store.json
-web-search.json
 pi-goal.json
 
 # === 用户配置（个人偏好，无需分享） ===
 loadout.json
 multimodal-proxy.json
+pi-statusline.json
 trust.json
 mcp.json
 mcp-cache.json
 
+# === 子代理状态 ===
+pi-subagents-state/
+
 # === 运行日志 / 会话数据（隐私敏感） ===
-run-history.jsonl
-inspect/
 sessions/
 
 # === 用量统计（含 session ID） ===
