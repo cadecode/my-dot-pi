@@ -85,7 +85,7 @@
 | `npm:pi-cost` | WebUI 费用统计 | — |
 | `npm:pi-inspect` | WebUI 调试面板 | — |
 | `npm:pi-powerline-footer` | 功能丰富底栏 + 固定编辑器等 | `npm:@narumitw/pi-statusline` |
-| `npm:pi-subagents`（nicobailon） | 偏自然语言工作流 | `npm:@narumitw/pi-subagents` |
+| `npm:pi-subagents` | 偏自然语言工作流 | `npm:@narumitw/pi-subagents` |
 | `npm:pi-web-access-lean` | 轻量网页访问 | `npm:pi-web-access` |
 
 ---
@@ -106,17 +106,17 @@
 
 | 名称 | 来源 | 说明 |
 |------|------|------|
-| **brave-search** | badlogic | Brave Search API 搜索和内容提取。轻量级，无需浏览器 |
-| **browser-tools** | badlogic | 浏览器自动化。通过 CDP 连接 Edge/Chrome，实现导航、截图、内容提取、Cookie 操作等 |
+| **brave-search** | @badlogic | Brave Search API 搜索和内容提取。轻量级，无需浏览器 |
+| **browser-tools** | @badlogic | 浏览器自动化。通过 CDP 连接 Edge/Chrome，实现导航、截图、内容提取、Cookie 操作等 |
 | **tavily-search** | Tavily | LLM 优化搜索。返回内容片段、相关性评分、来源元数据，支持域名和时间过滤 |
 
 ### 编程规范类
 
 | 名称 | 来源 | 说明 |
 |------|------|------|
-| **grill-me** | mottpocock | 编程头脑风暴。通过追问遍历决策树，在编码前发现盲区和边界情况 |
+| **grill-me** | @mottpocock | 编程头脑风暴。通过追问遍历决策树，在编码前发现盲区和边界情况 |
 | **frontend-design** | Anthropic | 前端设计规范。注重视觉风格、字体系统、色彩搭配、动效设计 |
-| **teach** | mattpocock | 教学型 Skill，工作区内教授新概念，支持多会话持续学习 |
+| **teach** | @mattpocock | 教学型 Skill，工作区内教授新概念，支持多会话持续学习 |
 
 ---
 
