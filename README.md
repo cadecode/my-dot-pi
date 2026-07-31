@@ -17,9 +17,6 @@
   - [多模态类](#多模态类)
   - [其他可选](#其他可选)
 - [Skill](#skill)
-  - [文档类](#文档类)
-  - [搜索能力类](#搜索能力类)
-  - [编程规范类](#编程规范类)
 - [Subagent](#subagent)
 
 ---
@@ -37,7 +34,7 @@
 │   ├── npm/
 │   │   ├── package.json           # npm 包声明
 │   │   └── package-lock.json      # 依赖锁定
-│   └── skills/                    # Skill 目录
+│   └── skills/                    # Skill 说明（内容已迁移至独立仓库）
 ├── .gitignore                     # 分层排除敏感信息
 └── README.md                      # 本文件
 ```
@@ -92,31 +89,11 @@
 
 ## Skill
 
-### 文档类
+常用 Skill 配置已迁移至独立仓库统一管理：
 
-| 名称 | 来源 | 说明 |
-|------|------|------|
-| **doc-coauthoring** | Anthropic | 协作写作工作流。三阶段：背景收集 → 内容提炼 → 读者验证，适用提案、规范、决策文档 |
-| **internal-comms** | Anthropic | 内部沟通文案。支持 3P 更新、公司通讯、FAQ、事故报告、项目更新 |
-| **pdf** | Anthropic | PDF 全功能处理。提取、合并、拆分、旋转、水印、表单、加密、OCR |
-| **pptx** | Anthropic | PPTX 完整处理。创建新幻灯片、模板编辑、内容提取、XML 分析、样式校验 |
-| **xlsx** | Anthropic | Excel 处理。读写 xlsx/csv/tsv、公式计算、格式化、图表、数据清洗 |
+**👉 [cadecode/agent-skills](https://github.com/cadecode/agent-skills)**
 
-### 搜索能力类
-
-| 名称 | 来源 | 说明 |
-|------|------|------|
-| **brave-search** | @badlogic | Brave Search API 搜索和内容提取。轻量级，无需浏览器 |
-| **browser-tools** | @badlogic | 浏览器自动化。通过 CDP 连接 Edge/Chrome，实现导航、截图、内容提取、Cookie 操作等 |
-| **tavily-search** | Tavily | LLM 优化搜索。返回内容片段、相关性评分、来源元数据，支持域名和时间过滤 |
-
-### 编程规范类
-
-| 名称 | 来源 | 说明 |
-|------|------|------|
-| **grill-me** | @mottpocock | 编程头脑风暴。通过追问遍历决策树，在编码前发现盲区和边界情况 |
-| **frontend-design** | Anthropic | 前端设计规范。注重视觉风格、字体系统、色彩搭配、动效设计 |
-| **teach** | @mattpocock | 教学型 Skill，工作区内教授新概念，支持多会话持续学习 |
+涵盖文档类、搜索能力类、编程规范类等 Skill，安装与更新请参照该仓库 README 的指引。
 
 ---
 
