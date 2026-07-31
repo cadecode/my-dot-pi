@@ -2,7 +2,7 @@
   "name": "pi-extensions",
   "private": true,
   "dependencies": {
-    "@juicesharp/rpiv-todo": "^2.1.0",
+    "@juicesharp/rpiv-todo": "^2.2.0",
     "@narumitw/pi-btw": "^0.34.0",
     "@narumitw/pi-goal": "^0.31.0",
     "@narumitw/pi-plan-mode": "^0.31.0",
@@ -10,7 +10,7 @@
     "@narumitw/pi-subagents": "^0.35.0",
     "pi-cache-optimizer": "^2.6.25",
     "pi-loadout": "^0.0.35",
-    "pi-mcp-adapter": "^2.15.0",
+    "pi-mcp-adapter": "^2.16.0",
     "pi-multimodal-proxy": "^1.7.1",
     "pi-simplify": "^0.2.2",
     "pi-web-access": "^0.14.0"
