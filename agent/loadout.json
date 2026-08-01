@@ -1,0 +1,37 @@
+{
+  "enabledTools": [
+    "analyze_image",
+    "bash",
+    "edit",
+    "fetch_content",
+    "find",
+    "get_search_content",
+    "goal_blocked",
+    "goal_complete",
+    "grep",
+    "ls",
+    "mcp",
+    "read",
+    "source_check",
+    "subagent",
+    "subagent_mailbox",
+    "subagent_manage",
+    "subagent_send",
+    "subagent_spawn",
+    "todo",
+    "web_search",
+    "write"
+  ],
+  "enabledSkills": [
+    "brave-search",
+    "tavily-search",
+    "env-info",
+    "browser-tools",
+    "git-commit-msg",
+    "doc-coauthoring",
+    "edit-article",
+    "frontend-design",
+    "pdf",
+    "xlsx"
+  ]
+}

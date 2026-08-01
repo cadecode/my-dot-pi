@@ -9,7 +9,6 @@ models-store.json
 pi-goal.json
 
 # === 用户配置（个人偏好，无需分享） ===
-loadout.json
 multimodal-proxy.json
 pi-statusline.json
 trust.json
