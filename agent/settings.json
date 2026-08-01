@@ -1,6 +1,6 @@
 {
   "lastChangelogVersion": "0.82.1",
-  "defaultProvider": "apikey.fun-dpsk",
+  "defaultProvider": "deepseek",
   "defaultModel": "deepseek-v4-flash",
   "defaultThinkingLevel": "high",
   "hideThinkingBlock": false,
@@ -8,7 +8,6 @@
   "showHardwareCursor": false,
   "shellPath": "D:/dev-env/lib/Git/bin/bash.exe",
   "packages": [
-    "npm:pi-cache-optimizer",
     "npm:pi-loadout",
     "npm:pi-mcp-adapter",
     "npm:pi-multimodal-proxy",
@@ -19,6 +18,7 @@
     "npm:@narumitw/pi-goal",
     "npm:@narumitw/pi-plan-mode",
     "npm:@narumitw/pi-statusline",
-    "npm:@narumitw/pi-subagents"
+    "npm:@narumitw/pi-subagents",
+    "npm:pi-cache-optimizer"
   ]
 }
