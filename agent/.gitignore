@@ -11,6 +11,7 @@ pi-goal.json
 # === 用户配置（个人偏好，无需分享） ===
 multimodal-proxy.json
 pi-statusline.json
+pi-subagents.json
 trust.json
 mcp.json
 mcp-cache.json
