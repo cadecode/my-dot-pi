@@ -103,13 +103,10 @@
 
 内置代理：
 
-- **scout** — 只读代码侦察
-- **planner** — 制定实现计划
-- **reviewer** — 代码审查
-- **worker** — 具体实现
-- **general** — worker 别名
+- **explorer** — 只读代码探索，输出带路径的发现
+- **worker** — 实现与命令执行
 
-支持 blocking 批量执行（single / parallel + aggregator / chain）和 stateful 异步生命周期（spawn / send / manage / mailbox）。
+支持 blocking 批量执行（single / parallel + aggregator / chain）和 stateful 异步生命周期（spawn / send / manage / mailbox），以及只读咨询（consult）与检查（inspect）。
 
 ---
 

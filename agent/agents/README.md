@@ -5,10 +5,9 @@
 子代理是一个独立的 Pi 子进程，有自己单独的上下文窗口和工具集。你可以把任务交给它，等它完成后拿结果回来。
 
 适合的场景：
-- 不理解代码 → 让 scout 去侦察
-- 大改动前 → 让 planner 出个计划
+- 不理解代码 → 让 explorer 去侦察
 - 写代码 → 让 worker 去实现
-- 审查代码 → 让 reviewer 检查质量
+- 需要综合多份结果 → blocking 面板 / aggregator
 
 ---
 
@@ -16,11 +15,10 @@
 
 | 名称 | 能干什么 |
 |------|---------|
-| **scout** | 快速了解代码结构，只读不编辑 |
-| **planner** | 制定实现计划，只读不编辑 |
-| **reviewer** | 审查 diff 的正确性、测试、边界情况。注意 reviewer 不会自动运行测试，它会建议需要你手动执行的验证命令 |
-| **worker** | 执行实现，编写和修改代码文件 |
-| **general** | worker 的别名 |
+| **explorer** | 只读代码探索，定位文件、符号、证据，输出带路径的简洁发现 |
+| **worker** | 执行实现，编写和修改代码文件，运行命令 |
+
+> **注意**：2.0 版将内置代理精简为 explorer / worker 两个。旧版的 scout 配置会自动迁移到 explorer；planner / reviewer / general 不再内置，可由自定义代理替代（见下文）。
 
 ---
 
@@ -29,16 +27,15 @@
 直接对主模型说就行，不需要背格式：
 
 ```
-用 reviewer 审查一下这个 diff
-让 scout 了解认证模块的代码结构
-用 worker 实现这个方案，完成后让 reviewer 审查
-并行审查：一个看正确性、一个看测试、一个看简洁性
+用 worker 实现这个方案
+让 explorer 了解认证模块的代码结构
+并行探索：一个找代码、一个找测试
 ```
 
 也可以明确定义 subagent 工具调用：
 
 ```
-subagent({ agent: "reviewer", task: "审查这个 diff" })
+subagent({ agent: "worker", task: "实现这个功能" })
 ```
 
 ### 同时做多件事情
@@ -48,22 +45,22 @@ subagent({ agent: "reviewer", task: "审查这个 diff" })
 ```json
 {
   "tasks": [
-    { "agent": "scout", "task": "找到认证模块的代码" },
-    { "agent": "scout", "task": "找到认证模块的测试" }
+    { "agent": "explorer", "task": "找到认证模块的代码" },
+    { "agent": "explorer", "task": "找到认证模块的测试" }
   ]
 }
 ```
 
-还可以把多个结果合并给一个 reviewer 做综合分析：
+还可以把多个结果合并给一个 review 面板做综合分析（2.0 新增的一等公民 blocking 面板）：
 
 ```json
 {
   "tasks": [
-    { "agent": "scout", "task": "找到代码入口" },
-    { "agent": "scout", "task": "找到相关测试" }
+    { "agent": "explorer", "task": "找到代码入口" },
+    { "agent": "explorer", "task": "找到相关测试" }
   ],
   "aggregator": {
-    "agent": "reviewer",
+    "agent": "worker",
     "task": "合并以上发现，输出风险评估。使用 {previous}。"
   }
 }
@@ -74,8 +71,8 @@ subagent({ agent: "reviewer", task: "审查这个 diff" })
 ```json
 {
   "chain": [
-    { "agent": "scout", "task": "调研当前实现" },
-    { "agent": "planner", "task": "基于调研结果制定方案：{previous}" }
+    { "agent": "explorer", "task": "调研当前实现" },
+    { "agent": "worker", "task": "基于调研结果制定方案并执行：{previous}" }
   ]
 }
 ```
@@ -99,7 +96,7 @@ subagent({ agent: "reviewer", task: "审查这个 diff" })
 
 ## 让子代理用不同的模型
 
-如果想给某个子代理指定不同的模型（比如让 reviewer 用更强的模型），有两种方式：
+如果想给某个子代理指定不同的模型（比如让自定义审查代理用更强的模型），有两种方式：
 
 ### 方式一：写在 agent 定义里
 
@@ -114,7 +111,7 @@ model: anthropic/claude-sonnet-4
 ### 方式二：调用时指定
 
 ```
-subagent({ agent: "reviewer", task: "...", model: "anthropic/claude-sonnet-4" })
+subagent({ agent: "deep-review", task: "...", model: "anthropic/claude-sonnet-4" })
 ```
 
 ---
@@ -199,17 +196,33 @@ subagent({ agent: "api-reviewer", task: "审查本次 API 变更" })
 
 在 pi 对话框中输入 `/subagents` 可以打开管理界面，查看当前 agent 配置、切换工作流模式等。
 
+subagents 默认注册 7 个工具，可通过 `/subagents` 切换工作流：
+
+| 工作流 | 注册的工具 |
+|--------|-----------|
+| **全部委派**（默认） | `subagent`、`subagent_spawn`、`subagent_send`、`subagent_manage`、`subagent_mailbox`、`subagent_inspect`、`subagent_consult` |
+| **仅异步**（推荐） | `subagent_spawn`、`subagent_send`、`subagent_manage`、`subagent_mailbox`、`subagent_inspect` |
+| **仅阻塞** | `subagent`、`subagent_inspect`、`subagent_consult` |
+| **禁用委派** | 仅 `subagent_inspect` |
+
+新增工具：
+
+| 工具 | 用途 |
+|------|------|
+| `subagent_inspect` | 只读检查 agent 元数据，不启动子进程 |
+| `subagent_consult` | 同步只读咨询，仅用 read/grep/find/ls |
+
 ---
 
 ## 工作流速查
 
 | 场景 | 做法 |
 |------|------|
-| 不清楚代码怎么组织的 | scout 侦察，拿到上下文简报再说 |
-| 大改动心里没底 | planner 出计划，确认了再动手 |
+| 不清楚代码怎么组织的 | explorer 侦察，拿到上下文简报再说 |
+| 大改动心里没底 | 让主模型先规划，再用 worker 执行 |
 | 多个独立调研 | 并行跑，各自出结果 |
 | 调研完要综合 | parallel + aggregator |
-| 实现完了不放心 | reviewer 审查 |
+| 实现完了不放心 | 自定义 review 代理审查 |
 | 后台跑任务不打断 | subagent_spawn |
 | 串行任务有依赖 | chain，上一步结果传给下一步 |
 
