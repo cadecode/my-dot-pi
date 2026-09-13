@@ -9,6 +9,9 @@ exa-usage.json
 # === 密钥 / 凭证 ===
 web-search.json
 
+# === 网页抓取缓存（运行时） ===
+web-search-cache/
+
 # === 操作系统文件 ===
 .DS_Store
 Thumbs.db
