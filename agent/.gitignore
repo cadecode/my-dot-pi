@@ -24,6 +24,7 @@ sessions/
 
 # === 用量统计（含 session ID） ===
 pi-cache-optimizer-stats.json
+*.tmp
 
 # === 二进制文件 ===
 bin/

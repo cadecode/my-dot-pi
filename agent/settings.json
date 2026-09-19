@@ -1,6 +1,6 @@
 {
   "lastChangelogVersion": "0.84.2",
-  "defaultProvider": "apikey-dpsk",
+  "defaultProvider": "deepseek",
   "defaultModel": "deepseek-flash",
   "defaultThinkingLevel": "high",
   "hideThinkingBlock": false,
