@@ -1,12 +1,11 @@
 {
   "theme": "dark",
   "tuiMode": "regular",
-  "defaultProvider": "deepseek",
+  "defaultProvider": "apikey-dpsk",
   "defaultModel": "deepseek-flash",
   "defaultThinkingLevel": "high",
   "hideThinkingBlock": false,
   "showHardwareCursor": false,
-  "shellPath": "D:/dev-env/lib/Git/bin/bash.exe",
   "packages": [
     "npm:pi-loadout@0.0.37",
     "npm:pi-cache-optimizer@2.10.4",
