@@ -18,6 +18,7 @@
 - [Skill](#skill)
 - [Subagent](#subagent)
 - [版本策略](#版本策略)
+- [升级与迁移](MIGRATION.md)
 
 ---
 
@@ -27,7 +28,7 @@
 .pi/
 ├── agent/
 │   ├── settings.json              # 核心配置：默认模型、插件版本（精确锁定）、tuiMode
-│   ├── loadout.json               # loadout 默认预设（default：22 工具 / 32 技能）
+│   ├── loadout.json               # loadout 默认预设（default：23 工具 / 32 技能）
 │   ├── loadout-profiles.json      # loadout 用户预设（base：23 工具 / 11 技能）
 │   ├── models.json                # 自定义 provider / 模型元数据（仅本地，不入库）
 │   ├── keybindings.json           # 自定义快捷键
@@ -40,6 +41,7 @@
 │       ├── package.json           # 插件声明（精确版本）
 │       └── package-lock.json      # 依赖锁定
 ├── GIT_SHARE.md                   # 配置仓库提交守则
+├── MIGRATION.md                   # 升级迁移指南（0.84.2 → 1.4.0）
 ├── .gitignore                     # 分层排除敏感信息
 └── README.md                      # 本文件
 ```
@@ -132,10 +134,10 @@ pi-loadout 的「默认」就是 `loadout.json` 本身——预设文件里再�
 
 | 预设 | 存放位置 | 内容 | 应用方式 |
 |------|----------|------|----------|
-| **default** | `agent/loadout.json` | 23 项白名单 / 32 技能（内置 7 + `codemode` + `tool_search` + goal 3 + subagent 5 + web 4 + `todo`），实际声明 22 个 | `/loadout default`，新会话自动生效 |
-| **base** | `agent/loadout-profiles.json` → `profiles.base` | 23 项白名单 / 11 技能（工具与 default 相同，技能精简为 11 个） | `/loadout use base` |
+| **default** | `agent/loadout.json` | 23 项白名单 / 32 技能（内置 7 + `codemode` + `tool_search` + goal 3 + subagent 5 + web 5 + `todo`），实际声明 22 个（`web_enable` 不计） | `/loadout default`，新会话自动生效 |
+| **base** | `agent/loadout-profiles.json` → `profiles.base` | 23 项白名单 / 11 技能（工具与 default 相同，技能精简为 11 个），实际声明 22 个 | `/loadout use base` |
 
-`web_enable` 保留在白名单里，但**不会出现在工具声明中**：pi-web-access 在当前模型走 eager 路径，`session_start` 时把四个 web 工具设为直接可用并摘掉 loader；把 `web-search.json` 改成 `"toolExposure": "deferred"`（或模型支持中途加工具）时，它会自动接管懒加载。因此白名单 23 项、实际声明 22 项属正常。
+`web_enable` 保留在白名单里，但**不会出现在工具声明中**：pi-web-access 在当前模型走 eager 路径，`session_start` 时把四个 web 工具设为直接可用并摘掉 loader；把 `agent/web-search.json` 改成 `"toolExposure": "deferred"`（或模型支持中途加工具）时，它会自动接管懒加载。因此白名单 23 项、实际声明 22 项属正常。
 
 其他：`/loadout full`、`/loadout minimal` 为内置预设；`/loadout list` 列全部预设；`/loadout status` 看当前状态；面板中 `Ctrl+S` 把当前选择存成新 default，`Ctrl+P` 存成命名预设。
 
