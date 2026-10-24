@@ -2,17 +2,15 @@
   "name": "pi-extensions",
   "private": true,
   "dependencies": {
-    "@juicesharp/rpiv-todo": "^2.6.2",
-    "@narumitw/pi-btw": "^0.54.1",
-    "@narumitw/pi-goal": "^0.52.1",
-    "@narumitw/pi-plan-mode": "^0.49.3",
-    "@narumitw/pi-statusline": "^0.49.10",
-    "@narumitw/pi-subagents": "^2.0.1",
-    "pi-cache-optimizer": "^2.8.3",
-    "pi-loadout": "^0.0.35",
-    "pi-mcp-adapter": "^2.26.1",
-    "pi-multimodal-proxy": "^1.15.0",
-    "pi-simplify": "^0.2.2",
-    "pi-web-access": "^0.23.0"
+    "pi-loadout": "0.0.37",
+    "pi-cache-optimizer": "2.10.4",
+    "@juicesharp/rpiv-todo": "2.15.0",
+    "@narumitw/pi-btw": "0.62.0",
+    "@narumitw/pi-goal": "0.54.13",
+    "@narumitw/pi-plan-mode": "0.59.4",
+    "@narumitw/pi-statusline": "0.50.2",
+    "@narumitw/pi-subagents": "3.3.0",
+    "pi-simplify": "0.2.3",
+    "pi-web-access": "0.44.0"
   }
 }

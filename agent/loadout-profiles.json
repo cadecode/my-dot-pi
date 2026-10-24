@@ -2,8 +2,8 @@
   "profiles": {
     "base": {
       "enabledTools": [
-        "analyze_image",
         "bash",
+        "codemode",
         "edit",
         "fetch_content",
         "find",
@@ -13,18 +13,16 @@
         "goal_wait",
         "grep",
         "ls",
-        "mcp",
-        "mcpScript",
         "read",
         "source_check",
-        "subagent",
-        "subagent_consult",
+        "subagent_cancel",
         "subagent_inspect",
-        "subagent_mailbox",
-        "subagent_manage",
         "subagent_send",
         "subagent_spawn",
+        "subagent_wait",
         "todo",
+        "tool_search",
+        "web_enable",
         "web_search",
         "write"
       ],
@@ -37,12 +35,11 @@
         "frontend-design",
         "git-commit-msg",
         "grill-me",
-        "mcp-scripting",
         "pdf",
         "tavily-search",
         "xlsx"
       ],
-      "updatedAt": "2026-08-19T15:00:00.000Z"
+      "updatedAt": "2026-10-24T05:29:36.583Z"
     }
   }
 }
