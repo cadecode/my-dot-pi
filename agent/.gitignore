@@ -1,30 +1,37 @@
 # ============================================
 # agent/ 目录 .gitignore
+# 原则：配置入仓库，凭证/状态/缓存/二进制不入库
 # ============================================
 
 # === 密钥 / 凭证（绝对不要提交） ===
 auth.json
 models.json
 models-store.json
-pi-goal.json
-
-# === 用户配置（个人偏好，无需分享） ===
-multimodal-proxy.json
-pi-statusline.json
-pi-subagents.json
 trust.json
+# 含 Bearer token，不入库
 mcp.json
 mcp-cache.json
+# pi-web-access 搜索配置，含各 provider 的 API Key
+web-search.json
 
-# === 子代理状态 ===
+# === 搜索内容缓存（含检索结果正文） ===
+web-search-cache/
+
+# === 本机状态 / 个人偏好 ===
+pi-goal.json
+pi-statusline.json
+pi-subagents.json
+multimodal-proxy.json
 pi-subagents-state/
+pi-cache-optimizer-stats.json
+pi-cache-optimizer-stats.d/
 
-# === 运行日志 / 会话数据（隐私敏感） ===
+# === 会话数据（隐私敏感） ===
 sessions/
 
-# === 用量统计（含 session ID） ===
-pi-cache-optimizer-stats.json
+# === 临时文件 ===
 *.tmp
+*.log
 
 # === 二进制文件 ===
 bin/
@@ -33,7 +40,7 @@ bin/
 node_modules/
 npm/node_modules/
 
-# === 操作系统文件 ===
+# === 操作系统 / IDE ===
 .DS_Store
 Thumbs.db
 Desktop.ini
