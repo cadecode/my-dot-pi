@@ -6,6 +6,8 @@
 
 > 仓库地址：https://github.com/cadecode/my-dot-pi
 
+**分支说明**：`main` 是 Windows 机器的工作分支，`local-vm-dev-deb` 是 Debian VM 的工作分支。两份配置 95% 相同，差异集中在 `settings.json` 的 `defaultProvider` / `shellPath` 和 skills 挂载方式，清单见 [MIGRATION.md](MIGRATION.md) 开头。
+
 ---
 
 ## 目录

@@ -136,6 +136,11 @@ chore(deps): 升级至 pi 1.4.0，移除 mcp-adapter 与 multimodal-proxy
 - 备选通道：`ssh.github.com:443` 可达（TCP 通、SSH 握手正常），需要账号绑定 SSH key 才能用。
 - HTTPS 凭证存在 `~/.git-credentials`（`credential.helper=store`，权限 600）。**不要在 remote URL 里内联 token**，不要在仓库 `.git/config` 里出现 token。
 - PAT 曾以明文形式出现在会话记录里 → 用完应 rotate；会话文件（`agent/sessions/*.jsonl`）已被忽略，但导出/分享前仍需检查。
+- **push 卡死或 `GnuTLS recv error (-110)` / `port 443 could not connect`**：`fetch` 正常而 `push` 超时，多半是 HTTP/2 在本机链路上被中断。先加 `-c http.version=HTTP/1.1` 重试：
+  ```bash
+  git -c http.version=HTTP/1.1 push --force-with-lease origin local-<host>
+  ```
+  实测（2026-10-24）`ls-remote` 能通、默认 push 卡 134s，加该参数后 1 秒完成。
 - 中国大陆镜像：`ghfast.top` / `gh-proxy.com` 只代理 fetch/clone，**不支持 push**。
 
 ---

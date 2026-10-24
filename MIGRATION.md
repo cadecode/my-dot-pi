@@ -8,6 +8,8 @@
 > 目标机器：Linux / macOS，已装 Node.js ≥ 22.19、npm、pnpm。最后更新：2026-10-24。
 >
 > **Windows 差异**（本仓库的 Windows 分支）：另需在 `settings.json` 保留 `shellPath`（指向 `bash.exe`）；skills 挂载用 junction（`mklink /J`）代替 `ln -s`；`pnpm add -g` 按 AGENTS.md 约定改为项目本地安装。
+>
+> **Debian VM 差异**（本仓库的 `local-vm-dev-deb` 分支）：`defaultProvider` 用 `apikey-dpsk`（本机 models.json 里的中转站 provider），**不设 `shellPath`**（Linux 直接用 `/bin/bash`）；skills 用 `ln -s` 绝对路径挂载，源库搬家后必须重建；`pnpm add -g` 可正常使用全局安装。本分支不保留 `lastChangelogVersion`（属运行时状态，交给 pi 自行写入）。
 
 ---
 
