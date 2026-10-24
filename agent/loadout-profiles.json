@@ -27,7 +27,6 @@
         "write"
       ],
       "enabledSkills": [
-        "brave-search",
         "browser-tools",
         "doc-coauthoring",
         "edit-article",
@@ -36,7 +35,6 @@
         "git-commit-msg",
         "grill-me",
         "pdf",
-        "tavily-search",
         "xlsx"
       ],
       "updatedAt": "2026-10-24T05:29:36.583Z"

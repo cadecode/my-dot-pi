@@ -136,7 +136,7 @@ mkdir -p ~/.agents/skills
 for d in /path/to/agent-skills/skills/*/; do
   ln -sfn "${d%/}" ~/.agents/skills/"$(basename "$d")"
 done
-find -L ~/.agents/skills -name SKILL.md | wc -l    # 本机 38
+find -L ~/.agents/skills -name SKILL.md | wc -l    # 本机 36
 ```
 
 > 软链写的是**绝对路径**，源库搬家后必须重建，否则 pi 扫不到技能。`~/.pi/agent/skills/` 保持为空，不要往里放东西。
@@ -167,9 +167,9 @@ node -e 'const p=require(process.env.HOME+"/.pi/agent/settings.json").packages;
   if(!/pi-loadout@/.test(p[0])||!/pi-cache-optimizer@/.test(p[1])){console.error("顺序不对");process.exit(1)}
   console.log("加载顺序正确", p.length+" 个包")'
 node -e 'const l=require(process.env.HOME+"/.pi/agent/loadout.json");
-  console.log("白名单工具", l.enabledTools.length, "技能", l.enabledSkills.length)'   # 23 / 32
+  console.log("白名单工具", l.enabledTools.length, "技能", l.enabledSkills.length)'   # 23 / 30
 node -e 'const b=require(process.env.HOME+"/.pi/agent/loadout-profiles.json").profiles.base;
-  console.log("base 工具", b.enabledTools.length, "技能", b.enabledSkills.length)'    # 23 / 11
+  console.log("base 工具", b.enabledTools.length, "技能", b.enabledSkills.length)'    # 23 / 9
 ```
 
 ### 3.2 工具面（应 22 个声明）
