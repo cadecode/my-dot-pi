@@ -170,8 +170,6 @@ node -e 'const p=require(process.env.HOME+"/.pi/agent/settings.json").packages;
   console.log("加载顺序正确", p.length+" 个包")'
 node -e 'const l=require(process.env.HOME+"/.pi/agent/loadout.json");
   console.log("白名单工具", l.enabledTools.length, "技能", l.enabledSkills.length)'   # 23 / 30
-node -e 'const b=require(process.env.HOME+"/.pi/agent/loadout-profiles.json").profiles.base;
-  console.log("base 工具", b.enabledTools.length, "技能", b.enabledSkills.length)'    # 23 / 9
 ```
 
 ### 3.2 工具面（应 22 个声明）

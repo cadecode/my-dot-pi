@@ -31,7 +31,7 @@
 ├── agent/
 │   ├── settings.json              # 核心配置：默认模型、插件版本（精确锁定）、tuiMode
 │   ├── loadout.json               # loadout 默认预设（default：23 工具 / 30 技能）
-│   ├── loadout-profiles.json      # loadout 用户预设（base：23 工具 / 9 技能）
+│   ├── loadout-profiles.json      # loadout 自定义预设（当前为空，可自行添加）
 │   ├── models.json                # 自定义 provider / 模型元数据（仅本地，不入库）
 │   ├── keybindings.json           # 自定义快捷键
 │   ├── AGENTS.md                  # 全局项目指令
@@ -137,7 +137,8 @@ pi-loadout 的「默认」就是 `loadout.json` 本身——预设文件里再�
 | 预设 | 存放位置 | 内容 | 应用方式 |
 |------|----------|------|----------|
 | **default** | `agent/loadout.json` | 23 项白名单 / 30 技能（内置 7 + `codemode` + `tool_search` + goal 3 + subagent 5 + web 5 + `todo`），实际声明 22 个（`web_enable` 不计） | `/loadout default`，新会话自动生效 |
-| **base** | `agent/loadout-profiles.json` → `profiles.base` | 23 项白名单 / 9 技能（工具与 default 相同，技能精简为 9 个），实际声明 22 个 | `/loadout use base` |
+
+`agent/loadout-profiles.json` 目前为 `{"profiles": {}}`，仅保留结构。需要多套工具/技能组合时，在 `profiles` 下新增条目即可（或面板 `Ctrl+P` 存成命名预设）。
 
 `web_enable` 保留在白名单里，但**不会出现在工具声明中**：pi-web-access 在当前模型走 eager 路径，`session_start` 时把四个 web 工具设为直接可用并摘掉 loader；把 `agent/web-search.json` 改成 `"toolExposure": "deferred"`（或模型支持中途加工具）时，它会自动接管懒加载。因此白名单 23 项、实际声明 22 项属正常。
 
