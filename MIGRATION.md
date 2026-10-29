@@ -169,7 +169,7 @@ node -e 'const p=require(process.env.HOME+"/.pi/agent/settings.json").packages;
   if(!/pi-loadout@/.test(p[0])||!/pi-cache-optimizer@/.test(p[1])){console.error("顺序不对");process.exit(1)}
   console.log("加载顺序正确", p.length+" 个包")'
 node -e 'const l=require(process.env.HOME+"/.pi/agent/loadout.json");
-  console.log("白名单工具", l.enabledTools.length, "技能", l.enabledSkills.length)'   # 23 / 30
+  console.log("白名单工具", l.enabledTools.length, "技能", l.enabledSkills.length)'   # 23 / 35
 ```
 
 ### 3.2 工具面（应 22 个声明）
